@@ -120,7 +120,7 @@ export default function Page() {
         </h1>
         <div className="flex flex-col items-center justify-center gap-6 mb-8">
           {/* Animated Beams Container - tall enough for beams, negative margins collapse layout space */}
-          <div ref={containerRef} className="relative w-full max-w-4xl h-[320px] -my-[136px]">
+          <div ref={containerRef} className="relative z-0 w-full max-w-4xl h-[320px] -my-[136px]">
             {/* Animated Beams - placed first in DOM to be behind icons and input bar */}
             {/* Left side beams (Icon -> Left Edge) */}
             <AnimatedBeam
@@ -128,7 +128,7 @@ export default function Page() {
               fromRef={icon1Ref}
               toRef={leftEdgeRef}
               curvature={-80}
-              duration={6}
+              duration={10}
               delay={0}
               gradientStartColor="oklch(0.6 0.2 290)"
               gradientStopColor="oklch(0.6 0.2 290)"
@@ -138,7 +138,7 @@ export default function Page() {
               fromRef={icon2Ref}
               toRef={leftEdgeRef}
               curvature={80}
-              duration={6}
+              duration={10}
               delay={0.5}
               gradientStartColor="oklch(0.6 0.2 290)"
               gradientStopColor="oklch(0.6 0.2 290)"
@@ -148,7 +148,7 @@ export default function Page() {
               fromRef={icon5Ref}
               toRef={leftEdgeRef}
               curvature={0}
-              duration={6}
+              duration={10}
               delay={1}
               gradientStartColor="oklch(0.6 0.2 290)"
               gradientStopColor="oklch(0.6 0.2 290)"
@@ -160,7 +160,7 @@ export default function Page() {
               fromRef={icon3Ref}
               toRef={rightEdgeRef}
               curvature={-80}
-              duration={6}
+              duration={10}
               delay={1}
               reverse
               gradientStartColor="oklch(0.6 0.2 290)"
@@ -171,7 +171,7 @@ export default function Page() {
               fromRef={icon4Ref}
               toRef={rightEdgeRef}
               curvature={80}
-              duration={6}
+              duration={10}
               delay={1.5}
               reverse
               gradientStartColor="oklch(0.6 0.2 290)"
@@ -182,7 +182,7 @@ export default function Page() {
               fromRef={icon6Ref}
               toRef={rightEdgeRef}
               curvature={0}
-              duration={6}
+              duration={10}
               delay={2}
               reverse
               gradientStartColor="oklch(0.6 0.2 290)"
@@ -220,6 +220,7 @@ export default function Page() {
                     className="h-9 px-4 rounded-full"
                   >
                     Create
+                    <HugeiconsIcon icon={ArrowRight02Icon} className="size-4.5 ml-1" strokeWidth={2} />
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
@@ -244,12 +245,12 @@ export default function Page() {
             </div>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="relative z-30 flex items-center gap-4">
             <span className="text-muted-foreground font-medium">or</span>
             <Button
               variant="outline"
               size="lg"
-              className="h-12 px-6 rounded-full shadow-md"
+              className="h-10 px-4 rounded-full shadow-md bg-background hover:brightness-150"
               data-icon="inline-end"
             >
               Browse apps
