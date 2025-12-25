@@ -116,6 +116,74 @@ export default function Page() {
         <div className="flex flex-col items-center justify-center gap-6 mb-8">
           {/* Animated Beams Container - tall enough for beams, negative margins collapse layout space */}
           <div ref={containerRef} className="relative w-full max-w-4xl h-[320px] -my-[136px]">
+            {/* Animated Beams - placed first in DOM to be behind icons and input bar */}
+            {/* Left side beams (Icon -> Left Edge) */}
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon1Ref}
+              toRef={leftEdgeRef}
+              curvature={-80}
+              duration={6}
+              delay={0}
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
+            />
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon2Ref}
+              toRef={leftEdgeRef}
+              curvature={80}
+              duration={6}
+              delay={0.5}
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
+            />
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon5Ref}
+              toRef={leftEdgeRef}
+              curvature={0}
+              duration={6}
+              delay={1}
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
+            />
+            
+            {/* Right side beams (Icon -> Right Edge, reversed) */}
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon3Ref}
+              toRef={rightEdgeRef}
+              curvature={-80}
+              duration={6}
+              delay={1}
+              reverse
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
+            />
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon4Ref}
+              toRef={rightEdgeRef}
+              curvature={80}
+              duration={6}
+              delay={1.5}
+              reverse
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
+            />
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon6Ref}
+              toRef={rightEdgeRef}
+              curvature={0}
+              duration={6}
+              delay={2}
+              reverse
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
+            />
+
             {/* Left Icons Column */}
             <div className="absolute left-0 md:left-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
               <div ref={icon1Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
@@ -126,7 +194,7 @@ export default function Page() {
             <div ref={icon5Ref} className="absolute -left-16 md:-left-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
 
             {/* Input Group in center with edge refs */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center z-20">
               {/* Left edge target - pushed in by half height (24px/6) */}
               <div ref={leftEdgeRef} className="absolute left-6 top-1/2 -translate-y-1/2 w-1 h-1" />
               
@@ -157,74 +225,6 @@ export default function Page() {
             
             {/* Right Outer Icon - extends further outward, positioned in middle */}
             <div ref={icon6Ref} className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
-
-            {/* Animated Beams */}
-            {/* Left side beams (Icon -> Left Edge) */}
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={icon1Ref}
-              toRef={leftEdgeRef}
-              curvature={-75}
-              duration={6}
-              delay={0}
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={icon2Ref}
-              toRef={leftEdgeRef}
-              curvature={75}
-              duration={6}
-              delay={0.5}
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={icon5Ref}
-              toRef={leftEdgeRef}
-              curvature={0}
-              duration={6}
-              delay={1}
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
-            />
-            
-            {/* Right side beams (Icon -> Right Edge, reversed) */}
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={icon3Ref}
-              toRef={rightEdgeRef}
-              curvature={-75}
-              duration={6}
-              delay={1}
-              reverse
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={icon4Ref}
-              toRef={rightEdgeRef}
-              curvature={75}
-              duration={6}
-              delay={1.5}
-              reverse
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
-            />
-            <AnimatedBeam
-              containerRef={containerRef}
-              fromRef={icon6Ref}
-              toRef={rightEdgeRef}
-              curvature={0}
-              duration={6}
-              delay={2}
-              reverse
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
-            />
           </div>
           
           <div className="flex items-center gap-4">
