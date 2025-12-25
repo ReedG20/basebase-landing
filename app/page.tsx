@@ -111,18 +111,6 @@ export default function Page() {
             "inset-x-0 inset-y-[-50%] h-[200%] skew-y-12",
           )}
         />
-        {/* <Ripple /> */}
-        {/* Unicorn Studio Background */}
-        {/* <div className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
-          <div 
-            data-us-project="WLdBnYQijgtciMrogZw4" 
-            className="w-full h-full min-h-[900px]"
-            style={{ 
-              opacity: 0.8,
-              mixBlendMode: "normal"
-            }}
-          />
-        </div> */}
         <div className="relative z-10 container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-48 lg:pt-40 lg:pb-64 text-center">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 max-w-4xl mx-auto">
           Build business tools in<br />
@@ -402,7 +390,10 @@ export default function Page() {
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
               Pull data from 100+ enterprise apps. Break down silos. Get the unified view you&apos;ve always wanted.
             </p>
-            <Button variant="outline">View all integrations →</Button>
+            <Button variant="outline">
+              View all integrations
+              <HugeiconsIcon icon={ArrowRight02Icon} className="size-4.5 ml-1" strokeWidth={2} />
+            </Button>
           </div>
           <div className="grid grid-cols-5 md:grid-cols-8 gap-4 max-w-5xl mx-auto">
             {["Slack", "Airtable", "Sheets", "Notion", "Stripe", "Salesforce", "HubSpot", "Calendar", 
@@ -459,7 +450,10 @@ export default function Page() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Stop waiting on IT. Start building the tools your business actually needs—in minutes, not months.
           </p>
-          <Button size="lg" className="mb-4">Create App →</Button>
+          <Button size="lg" className="mb-4">
+            Create App
+            <HugeiconsIcon icon={ArrowRight02Icon} className="size-4.5 ml-1" strokeWidth={2} />
+          </Button>
           <p className="text-sm text-muted-foreground">
             No credit card required · Free forever for individuals
           </p>
