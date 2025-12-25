@@ -18,6 +18,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
+import Image from "next/image";
 
 export default function Page() {
   const [showNavCTA, setShowNavCTA] = useState(false);
@@ -186,12 +187,18 @@ export default function Page() {
 
             {/* Left Icons Column */}
             <div className="absolute left-0 md:left-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
-              <div ref={icon1Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
-              <div ref={icon2Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
+              <div ref={icon1Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
+                <Image src="/logos/slack.png" alt="Slack" width={32} height={32} className="w-full h-full object-contain" />
+              </div>
+              <div ref={icon2Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
+                <Image src="/logos/airtable.png" alt="Airtable" width={32} height={32} className="w-full h-full object-contain" />
+              </div>
             </div>
             
             {/* Left Outer Icon - extends further outward, positioned in middle */}
-            <div ref={icon5Ref} className="absolute -left-16 md:-left-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
+            <div ref={icon5Ref} className="absolute -left-16 md:-left-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
+              <Image src="/logos/google-sheets.png" alt="Google Sheets" width={32} height={32} className="w-full h-full object-contain" />
+            </div>
 
             {/* Input Group in center with edge refs */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center z-20">
@@ -219,12 +226,18 @@ export default function Page() {
 
             {/* Right Icons Column */}
             <div className="absolute right-0 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
-              <div ref={icon3Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
-              <div ref={icon4Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
+              <div ref={icon3Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
+                <Image src="/logos/notion.png" alt="Notion" width={32} height={32} className="w-full h-full object-contain" />
+              </div>
+              <div ref={icon4Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
+                <Image src="/logos/salesforce.png" alt="Salesforce" width={32} height={32} className="w-full h-full object-contain" />
+              </div>
             </div>
             
             {/* Right Outer Icon - extends further outward, positioned in middle */}
-            <div ref={icon6Ref} className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
+            <div ref={icon6Ref} className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
+              <Image src="/logos/stripe.png" alt="Stripe" width={32} height={32} className="w-full h-full object-contain" />
+            </div>
           </div>
           
           <div className="flex items-center gap-4">
