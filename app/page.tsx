@@ -23,6 +23,7 @@ import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
 import { cn } from "@/lib/utils";
 // import { Ripple } from "@/components/ui/ripple";
 import Image from "next/image";
+import BasebaseLogo from "@/components/basebase-logo";
 
 export default function Page() {
   const [showNavCTA, setShowNavCTA] = useState(false);
@@ -72,8 +73,8 @@ export default function Page() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded" />
-              <span className="font-bold text-xl">Basebase</span>
+              <BasebaseLogo className="w-8 h-8" />
+              <span className="font-medium text-xl tracking-tight">Basebase</span>
             </div>
             <div className="flex items-center gap-2">
               <nav className="hidden md:flex items-center gap-2">
