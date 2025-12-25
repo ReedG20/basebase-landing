@@ -127,8 +127,8 @@ export default function Page() {
 
             {/* Input Group in center with edge refs */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center">
-              {/* Left edge target */}
-              <div ref={leftEdgeRef} className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-1" />
+              {/* Left edge target - pushed in by half height (24px/6) */}
+              <div ref={leftEdgeRef} className="absolute left-6 top-1/2 -translate-y-1/2 w-1 h-1" />
               
               <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20 bg-background shadow-lg">
                 <InputGroupInput
@@ -145,8 +145,8 @@ export default function Page() {
                 </InputGroupAddon>
               </InputGroup>
               
-              {/* Right edge target */}
-              <div ref={rightEdgeRef} className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-1" />
+              {/* Right edge target - pushed in by half height (24px/6) */}
+              <div ref={rightEdgeRef} className="absolute right-6 top-1/2 -translate-y-1/2 w-1 h-1" />
             </div>
 
             {/* Right Icons Column */}
