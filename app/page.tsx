@@ -221,7 +221,7 @@ export default function Page() {
                     className="h-9 px-4 rounded-full"
                   >
                     Create
-                    <HugeiconsIcon icon={ArrowRight02Icon} className="size-4.5 ml-1" strokeWidth={2} />
+                    <HugeiconsIcon icon={ArrowRight02Icon} className="size-4.5 ml-0.5" strokeWidth={2} />
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
