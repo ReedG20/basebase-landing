@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import {
   InputGroup,
@@ -263,22 +262,6 @@ export default function Page() {
             </Button>
           </div>
         </div>
-        </div>
-      </section>
-
-      {/* Trusted By Section */}
-      <section className="border-y bg-muted/50 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm text-muted-foreground mb-6">
-            Trusted by revenue ops, marketing ops, and business teams
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Badge variant="outline">RevOps Teams</Badge>
-            <Badge variant="outline">MarTech Teams</Badge>
-            <Badge variant="outline">Finance Ops</Badge>
-            <Badge variant="outline">Customer Success</Badge>
-            <Badge variant="outline">Sales Ops</Badge>
-          </div>
         </div>
       </section>
 
