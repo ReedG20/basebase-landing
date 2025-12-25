@@ -15,6 +15,7 @@ import {
   ArrowRight02Icon,
   ShapeCollectionIcon,
 } from "@hugeicons/core-free-icons";
+import { Highlighter } from "@/components/ui/highlighter";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
@@ -115,7 +116,10 @@ export default function Page() {
         </div> */}
         <div className="relative z-10 container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-48 lg:pt-40 lg:pb-64 text-center">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 max-w-4xl mx-auto">
-          Build business tools in<br /><span className="italic">minutes</span>,
+          Build business tools in<br />
+          <Highlighter action="highlight" color="#40E6FF" isView={true}>
+            <span className="italic">minutes</span>,
+          </Highlighter>{" "}
           not months.
         </h1>
         <div className="flex flex-col items-center justify-center gap-6 mb-8">
