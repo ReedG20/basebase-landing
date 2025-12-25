@@ -31,6 +31,8 @@ export default function Page() {
   const icon2Ref = useRef<HTMLDivElement>(null);
   const icon3Ref = useRef<HTMLDivElement>(null);
   const icon4Ref = useRef<HTMLDivElement>(null);
+  const icon5Ref = useRef<HTMLDivElement>(null);
+  const icon6Ref = useRef<HTMLDivElement>(null);
   const leftEdgeRef = useRef<HTMLDivElement>(null);
   const rightEdgeRef = useRef<HTMLDivElement>(null);
 
@@ -112,19 +114,49 @@ export default function Page() {
           not months.
         </h1>
         <div className="flex flex-col items-center justify-center gap-6 mb-8">
-          {/* Animated Beams Container - absolutely positioned, doesn't affect layout */}
-          <div ref={containerRef} className="relative w-full max-w-6xl h-[200px] mx-auto pointer-events-none">
-            {/* Left Icons */}
-            <div ref={icon1Ref} className="absolute left-0 top-[25%] -translate-y-1/2 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center pointer-events-auto" />
-            <div ref={icon2Ref} className="absolute left-0 bottom-[25%] translate-y-1/2 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center pointer-events-auto" />
+          {/* Animated Beams Container - tall enough for beams, negative margins collapse layout space */}
+          <div ref={containerRef} className="relative w-full max-w-4xl h-[320px] -my-[136px]">
+            {/* Left Icons Column */}
+            <div className="absolute left-0 md:left-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
+              <div ref={icon1Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
+              <div ref={icon2Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
+            </div>
+            
+            {/* Left Outer Icon - extends further outward, positioned in middle */}
+            <div ref={icon5Ref} className="absolute -left-16 md:-left-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
 
-            {/* Right Icons */}
-            <div ref={icon3Ref} className="absolute right-0 top-[25%] -translate-y-1/2 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center pointer-events-auto" />
-            <div ref={icon4Ref} className="absolute right-0 bottom-[25%] translate-y-1/2 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center pointer-events-auto" />
+            {/* Input Group in center with edge refs */}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center">
+              {/* Left edge target */}
+              <div ref={leftEdgeRef} className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-1" />
+              
+              <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20 bg-background shadow-lg">
+                <InputGroupInput
+                  placeholder="Describe your app..."
+                  className="px-6 text-base"
+                />
+                <InputGroupAddon align="inline-end" className="pr-1.5 mr-0!">
+                  <InputGroupButton
+                    variant="default"
+                    className="h-9 px-4 rounded-full"
+                  >
+                    Create
+                  </InputGroupButton>
+                </InputGroupAddon>
+              </InputGroup>
+              
+              {/* Right edge target */}
+              <div ref={rightEdgeRef} className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-1" />
+            </div>
 
-            {/* Invisible targets for beams at edges of input */}
-            <div ref={leftEdgeRef} className="absolute left-1/2 top-1/2 w-1 h-1 -translate-x-[calc(50%+12rem)] -translate-y-1/2" />
-            <div ref={rightEdgeRef} className="absolute left-1/2 top-1/2 w-1 h-1 -translate-x-[calc(-50%-12rem)] -translate-y-1/2" />
+            {/* Right Icons Column */}
+            <div className="absolute right-0 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
+              <div ref={icon3Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
+              <div ref={icon4Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
+            </div>
+            
+            {/* Right Outer Icon - extends further outward, positioned in middle */}
+            <div ref={icon6Ref} className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center" />
 
             {/* Animated Beams */}
             {/* Left side beams (Icon -> Left Edge) */}
@@ -132,67 +164,75 @@ export default function Page() {
               containerRef={containerRef}
               fromRef={icon1Ref}
               toRef={leftEdgeRef}
-              curvature={-60}
-              duration={3}
+              curvature={-75}
+              duration={6}
               delay={0}
-              endYOffset={0}
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
             />
             <AnimatedBeam
               containerRef={containerRef}
               fromRef={icon2Ref}
               toRef={leftEdgeRef}
-              curvature={60}
-              duration={3}
+              curvature={75}
+              duration={6}
               delay={0.5}
-              endYOffset={0}
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
+            />
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon5Ref}
+              toRef={leftEdgeRef}
+              curvature={0}
+              duration={6}
+              delay={1}
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
             />
             
-            {/* Right side beams (Icon -> Right Edge) */}
-            {/* Note: Reverse direction for right side to flow INTO the input */}
+            {/* Right side beams (Icon -> Right Edge, reversed) */}
             <AnimatedBeam
               containerRef={containerRef}
               fromRef={icon3Ref}
               toRef={rightEdgeRef}
-              curvature={-60}
-              duration={3}
+              curvature={-75}
+              duration={6}
               delay={1}
               reverse
-              endYOffset={0}
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
             />
             <AnimatedBeam
               containerRef={containerRef}
               fromRef={icon4Ref}
               toRef={rightEdgeRef}
-              curvature={60}
-              duration={3}
+              curvature={75}
+              duration={6}
               delay={1.5}
               reverse
-              endYOffset={0}
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
+            />
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon6Ref}
+              toRef={rightEdgeRef}
+              curvature={0}
+              duration={6}
+              delay={2}
+              reverse
+              gradientStartColor="oklch(0.852 0.199 91.936)"
+              gradientStopColor="oklch(0.852 0.199 91.936)"
             />
           </div>
-
-          {/* Input Group - centered in normal document flow */}
-          <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20 bg-background shadow-lg shadow-primary/5">
-            <InputGroupInput
-              placeholder="Describe your app..."
-              className="px-6 text-base"
-            />
-            <InputGroupAddon align="inline-end" className="pr-1.5 mr-0!">
-              <InputGroupButton
-                variant="default"
-                className="h-9 px-4 rounded-full"
-              >
-                Create
-              </InputGroupButton>
-            </InputGroupAddon>
-          </InputGroup>
           
           <div className="flex items-center gap-4">
             <span className="text-muted-foreground font-medium">or</span>
             <Button
               variant="outline"
               size="lg"
-              className="h-12 px-6 rounded-full bg-[#F8F7F7] hover:bg-[#ECEBEB]"
+              className="h-12 px-6 rounded-full bg-[#F8F7F7] hover:bg-[#ECEBEB] shadow-md"
               data-icon="inline-end"
             >
               Browse apps
