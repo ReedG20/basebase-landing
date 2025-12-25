@@ -18,6 +18,7 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
+import { Ripple } from "@/components/ui/ripple";
 import Image from "next/image";
 
 export default function Page() {
@@ -100,6 +101,7 @@ export default function Page() {
 
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
+        <Ripple />
         {/* Unicorn Studio Background */}
         {/* <div className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
           <div 
