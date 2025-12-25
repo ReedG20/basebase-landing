@@ -126,8 +126,8 @@ export default function Page() {
               curvature={-80}
               duration={6}
               delay={0}
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
+              gradientStartColor="oklch(0.6 0.2 290)"
+              gradientStopColor="oklch(0.6 0.2 290)"
             />
             <AnimatedBeam
               containerRef={containerRef}
@@ -136,8 +136,8 @@ export default function Page() {
               curvature={80}
               duration={6}
               delay={0.5}
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
+              gradientStartColor="oklch(0.6 0.2 290)"
+              gradientStopColor="oklch(0.6 0.2 290)"
             />
             <AnimatedBeam
               containerRef={containerRef}
@@ -146,8 +146,8 @@ export default function Page() {
               curvature={0}
               duration={6}
               delay={1}
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
+              gradientStartColor="oklch(0.6 0.2 290)"
+              gradientStopColor="oklch(0.6 0.2 290)"
             />
             
             {/* Right side beams (Icon -> Right Edge, reversed) */}
@@ -159,8 +159,8 @@ export default function Page() {
               duration={6}
               delay={1}
               reverse
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
+              gradientStartColor="oklch(0.6 0.2 290)"
+              gradientStopColor="oklch(0.6 0.2 290)"
             />
             <AnimatedBeam
               containerRef={containerRef}
@@ -170,8 +170,8 @@ export default function Page() {
               duration={6}
               delay={1.5}
               reverse
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
+              gradientStartColor="oklch(0.6 0.2 290)"
+              gradientStopColor="oklch(0.6 0.2 290)"
             />
             <AnimatedBeam
               containerRef={containerRef}
@@ -181,23 +181,23 @@ export default function Page() {
               duration={6}
               delay={2}
               reverse
-              gradientStartColor="oklch(0.852 0.199 91.936)"
-              gradientStopColor="oklch(0.852 0.199 91.936)"
+              gradientStartColor="oklch(0.6 0.2 290)"
+              gradientStopColor="oklch(0.6 0.2 290)"
             />
 
             {/* Left Icons Column */}
             <div className="absolute left-0 md:left-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
-              <div ref={icon1Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
-                <Image src="/logos/slack.png" alt="Slack" width={32} height={32} className="w-full h-full object-contain" />
+              <div ref={icon1Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+                <Image src="/logos/slack.png" alt="Slack" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
-              <div ref={icon2Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
-                <Image src="/logos/airtable.png" alt="Airtable" width={32} height={32} className="w-full h-full object-contain" />
+              <div ref={icon2Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+                <Image src="/logos/airtable.png" alt="Airtable" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
             </div>
             
             {/* Left Outer Icon - extends further outward, positioned in middle */}
-            <div ref={icon5Ref} className="absolute -left-16 md:-left-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
-              <Image src="/logos/google-sheets.png" alt="Google Sheets" width={32} height={32} className="w-full h-full object-contain" />
+            <div ref={icon5Ref} className="absolute -left-16 md:-left-8 top-1/2 -translate-y-1/2 z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+              <Image src="/logos/google-sheets.png" alt="Google Sheets" width={32} height={32} className="w-8 h-8 object-contain" />
             </div>
 
             {/* Input Group in center with edge refs */}
@@ -226,17 +226,17 @@ export default function Page() {
 
             {/* Right Icons Column */}
             <div className="absolute right-0 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
-              <div ref={icon3Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
-                <Image src="/logos/notion.png" alt="Notion" width={32} height={32} className="w-full h-full object-contain" />
+              <div ref={icon3Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+                <Image src="/logos/notion.png" alt="Notion" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
-              <div ref={icon4Ref} className="z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
-                <Image src="/logos/salesforce.png" alt="Salesforce" width={32} height={32} className="w-full h-full object-contain" />
+              <div ref={icon4Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+                <Image src="/logos/salesforce.png" alt="Salesforce" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
             </div>
             
             {/* Right Outer Icon - extends further outward, positioned in middle */}
-            <div ref={icon6Ref} className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 z-10 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-2">
-              <Image src="/logos/stripe.png" alt="Stripe" width={32} height={32} className="w-full h-full object-contain" />
+            <div ref={icon6Ref} className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+              <Image src="/logos/stripe.png" alt="Stripe" width={32} height={32} className="w-8 h-8 object-contain" />
             </div>
           </div>
           
@@ -245,7 +245,7 @@ export default function Page() {
             <Button
               variant="outline"
               size="lg"
-              className="h-12 px-6 rounded-full bg-[#F8F7F7] hover:bg-[#ECEBEB] shadow-md"
+              className="h-12 px-6 rounded-full shadow-md"
               data-icon="inline-end"
             >
               Browse apps
