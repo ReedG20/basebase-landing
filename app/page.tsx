@@ -13,7 +13,6 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import {
   ArrowRight02Icon,
-  AiMagicIcon,
   ShapeCollectionIcon,
 } from "@hugeicons/core-free-icons";
 import { motion, AnimatePresence } from "framer-motion";
@@ -92,9 +91,6 @@ export default function Page() {
           Build business tools in<br /><span className="italic">minutes</span>,
           not months.
         </h1>
-        <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Connect your data. Build custom apps in minutes. Share instantly with your team. No engineers required.
-        </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
           <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20">
             <InputGroupInput
@@ -124,9 +120,20 @@ export default function Page() {
             />
           </Button>
         </div>
-        <p className="text-sm text-muted-foreground">
-          No credit card required · Free forever for individuals
-        </p>
+        {/* <div className="text-lg text-muted-foreground w-fit mx-auto font-jetbrains flex flex-col gap-2">
+          <p className="w-full text-justify [text-align-last:justify]">
+            Connect your data
+          </p>
+          <p className="w-full text-justify [text-align-last:justify]">
+            Build custom apps in minutes
+          </p>
+          <p className="w-full text-justify [text-align-last:justify]">
+            Share instantly with your team
+          </p>
+          <p className="w-full text-justify [text-align-last:justify]">
+            No engineers required
+          </p>
+        </div> */}
       </section>
 
       {/* Trusted By Section */}
