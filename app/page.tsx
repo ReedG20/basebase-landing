@@ -19,7 +19,9 @@ import { Highlighter } from "@/components/ui/highlighter";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
-import { Ripple } from "@/components/ui/ripple";
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern";
+import { cn } from "@/lib/utils";
+// import { Ripple } from "@/components/ui/ripple";
 import Image from "next/image";
 
 export default function Page() {
@@ -102,7 +104,17 @@ export default function Page() {
 
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
-        <Ripple />
+        <AnimatedGridPattern
+          numSquares={30}
+          maxOpacity={0.1}
+          duration={3}
+          repeatDelay={1}
+          className={cn(
+            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+          )}
+        />
+        {/* <Ripple /> */}
         {/* Unicorn Studio Background */}
         {/* <div className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
           <div 
@@ -117,7 +129,7 @@ export default function Page() {
         <div className="relative z-10 container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-48 lg:pt-40 lg:pb-64 text-center">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 max-w-4xl mx-auto">
           Build business tools in<br />
-          <Highlighter action="highlight" color="#40E6FF" isView={true}>
+          <Highlighter action="underline" color="#164CE3" isView={true} padding={-2}>
             <span className="italic">minutes</span>,
           </Highlighter>{" "}
           not months.

@@ -18,9 +18,14 @@ export const Ripple = React.memo(function Ripple({
   return (
     <div
       className={cn(
-        "pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,white,transparent)] select-none",
+        "pointer-events-none absolute inset-0 select-none",
         className
       )}
+      style={{
+        maskImage: "linear-gradient(to bottom, transparent, white 20%, white 80%, transparent)",
+        WebkitMaskImage: "linear-gradient(to bottom, transparent, white 20%, white 80%, transparent)",
+        ...props.style,
+      }}
       {...props}
     >
       {Array.from({ length: numCircles }, (_, i) => {
