@@ -4,14 +4,24 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { ArrowRight02Icon } from "@hugeicons/core-free-icons";
+import {
+  ArrowRight02Icon,
+  AiMagicIcon,
+  ShapeCollectionIcon,
+} from "@hugeicons/core-free-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
   const [showNavCTA, setShowNavCTA] = useState(false);
-  const heroCtaRef = useRef<HTMLButtonElement>(null);
+  const heroCtaRef = useRef<HTMLDivElement>(null);
   const integrationsRef = useRef<HTMLElement>(null);
   const pricingRef = useRef<HTMLElement>(null);
 
@@ -78,18 +88,41 @@ export default function Page() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
-        <Badge variant="secondary" className="mb-4">Built for business operations</Badge>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 max-w-4xl mx-auto">
-          Build business tools in <span className="italic">minutes</span>,
-          <br />
+          Build business tools in<br /><span className="italic">minutes</span>,
           not months.
         </h1>
         <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
           Connect your data. Build custom apps in minutes. Share instantly with your team. No engineers required.
         </p>
-        <div className="flex gap-4 justify-center mb-4">
-          <Button ref={heroCtaRef} size="lg">Browse Apps</Button>
-          <Button size="lg" variant="outline">Create App</Button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+          <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20">
+            <InputGroupInput
+              placeholder="Describe your app..."
+              className="px-6 text-base"
+            />
+            <InputGroupAddon align="inline-end" className="pr-1.5 mr-0!">
+              <InputGroupButton
+                variant="default"
+                className="h-9 px-4 rounded-full"
+              >
+                Create
+              </InputGroupButton>
+            </InputGroupAddon>
+          </InputGroup>
+          <span className="text-muted-foreground font-medium">or</span>
+          <Button
+            variant="outline"
+            size="lg"
+            className="h-12 px-6 rounded-full"
+            data-icon="inline-end"
+          >
+            Browse apps
+            <HugeiconsIcon
+              icon={ShapeCollectionIcon}
+              className="size-5 -rotate-90 ml-1"
+            />
+          </Button>
         </div>
         <p className="text-sm text-muted-foreground">
           No credit card required · Free forever for individuals
