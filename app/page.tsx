@@ -108,8 +108,8 @@ export default function Page() {
             opacity: 0.3
           }}
         /> */}
-        <div className="relative z-10 container mx-auto px-4 py-32 md:py-48 lg:py-64 text-center">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 max-w-4xl mx-auto">
+        <div className="relative z-10 container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-48 lg:pt-40 lg:pb-64 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 max-w-4xl mx-auto">
           Build business tools in<br /><span className="italic">minutes</span>,
           not months.
         </h1>
@@ -243,20 +243,6 @@ export default function Page() {
             </Button>
           </div>
         </div>
-        {/* <div className="text-lg text-muted-foreground w-fit mx-auto font-jetbrains flex flex-col gap-2">
-          <p className="w-full text-justify [text-align-last:justify]">
-            Connect your data
-          </p>
-          <p className="w-full text-justify [text-align-last:justify]">
-            Build custom apps in minutes
-          </p>
-          <p className="w-full text-justify [text-align-last:justify]">
-            Share instantly with your team
-          </p>
-          <p className="w-full text-justify [text-align-last:justify]">
-            No engineers required
-          </p>
-        </div> */}
         </div>
       </section>
 
