@@ -17,12 +17,22 @@ import {
 } from "@hugeicons/core-free-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { AnimatedBeam } from "@/components/ui/animated-beam";
 
 export default function Page() {
   const [showNavCTA, setShowNavCTA] = useState(false);
   const heroCtaRef = useRef<HTMLDivElement>(null);
   const integrationsRef = useRef<HTMLElement>(null);
   const pricingRef = useRef<HTMLElement>(null);
+  
+  // Refs for animated beams
+  const containerRef = useRef<HTMLDivElement>(null);
+  const icon1Ref = useRef<HTMLDivElement>(null);
+  const icon2Ref = useRef<HTMLDivElement>(null);
+  const icon3Ref = useRef<HTMLDivElement>(null);
+  const icon4Ref = useRef<HTMLDivElement>(null);
+  const leftEdgeRef = useRef<HTMLDivElement>(null);
+  const rightEdgeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,7 +97,7 @@ export default function Page() {
 
       {/* Hero Section */}
       <section className="relative w-full">
-        <div 
+        {/* <div 
           className="absolute inset-0 w-full h-full bg-center bg-no-repeat pointer-events-none"
           style={{
             backgroundImage: "url('/images/hero-background-1.png')",
@@ -95,14 +105,74 @@ export default function Page() {
             mixBlendMode: "multiply",
             opacity: 0.3
           }}
-        />
-        <div className="relative z-10 container mx-auto px-4 py-24 md:py-32 lg:py-40 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 max-w-4xl mx-auto">
+        /> */}
+        <div className="relative z-10 container mx-auto px-4 py-32 md:py-48 lg:py-64 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 max-w-4xl mx-auto">
           Build business tools in<br /><span className="italic">minutes</span>,
           not months.
         </h1>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-          <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20 bg-background">
+        <div className="flex flex-col items-center justify-center gap-6 mb-8">
+          {/* Animated Beams Container - absolutely positioned, doesn't affect layout */}
+          <div ref={containerRef} className="relative w-full max-w-6xl h-[200px] mx-auto pointer-events-none">
+            {/* Left Icons */}
+            <div ref={icon1Ref} className="absolute left-0 top-[25%] -translate-y-1/2 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center pointer-events-auto" />
+            <div ref={icon2Ref} className="absolute left-0 bottom-[25%] translate-y-1/2 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center pointer-events-auto" />
+
+            {/* Right Icons */}
+            <div ref={icon3Ref} className="absolute right-0 top-[25%] -translate-y-1/2 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center pointer-events-auto" />
+            <div ref={icon4Ref} className="absolute right-0 bottom-[25%] translate-y-1/2 size-10 md:size-12 rounded-full border border-border bg-background shadow-sm flex items-center justify-center pointer-events-auto" />
+
+            {/* Invisible targets for beams at edges of input */}
+            <div ref={leftEdgeRef} className="absolute left-1/2 top-1/2 w-1 h-1 -translate-x-[calc(50%+12rem)] -translate-y-1/2" />
+            <div ref={rightEdgeRef} className="absolute left-1/2 top-1/2 w-1 h-1 -translate-x-[calc(-50%-12rem)] -translate-y-1/2" />
+
+            {/* Animated Beams */}
+            {/* Left side beams (Icon -> Left Edge) */}
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon1Ref}
+              toRef={leftEdgeRef}
+              curvature={-60}
+              duration={3}
+              delay={0}
+              endYOffset={0}
+            />
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon2Ref}
+              toRef={leftEdgeRef}
+              curvature={60}
+              duration={3}
+              delay={0.5}
+              endYOffset={0}
+            />
+            
+            {/* Right side beams (Icon -> Right Edge) */}
+            {/* Note: Reverse direction for right side to flow INTO the input */}
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon3Ref}
+              toRef={rightEdgeRef}
+              curvature={-60}
+              duration={3}
+              delay={1}
+              reverse
+              endYOffset={0}
+            />
+            <AnimatedBeam
+              containerRef={containerRef}
+              fromRef={icon4Ref}
+              toRef={rightEdgeRef}
+              curvature={60}
+              duration={3}
+              delay={1.5}
+              reverse
+              endYOffset={0}
+            />
+          </div>
+
+          {/* Input Group - centered in normal document flow */}
+          <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20 bg-background shadow-lg shadow-primary/5">
             <InputGroupInput
               placeholder="Describe your app..."
               className="px-6 text-base"
@@ -116,19 +186,22 @@ export default function Page() {
               </InputGroupButton>
             </InputGroupAddon>
           </InputGroup>
-          <span className="text-muted-foreground font-medium">or</span>
-          <Button
-            variant="outline"
-            size="lg"
-            className="h-12 px-6 rounded-full bg-[#F8F7F7] "
-            data-icon="inline-end"
-          >
-            Browse apps
-            <HugeiconsIcon
-              icon={ShapeCollectionIcon}
-              className="size-5 -rotate-90 ml-1"
-            />
-          </Button>
+          
+          <div className="flex items-center gap-4">
+            <span className="text-muted-foreground font-medium">or</span>
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-12 px-6 rounded-full bg-[#F8F7F7] hover:bg-[#ECEBEB]"
+              data-icon="inline-end"
+            >
+              Browse apps
+              <HugeiconsIcon
+                icon={ShapeCollectionIcon}
+                className="size-5 -rotate-90 ml-1"
+              />
+            </Button>
+          </div>
         </div>
         {/* <div className="text-lg text-muted-foreground w-fit mx-auto font-jetbrains flex flex-col gap-2">
           <p className="w-full text-justify [text-align-last:justify]">
