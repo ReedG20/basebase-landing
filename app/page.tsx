@@ -99,16 +99,18 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative w-full">
-        {/* <div 
-          className="absolute inset-0 w-full h-full bg-center bg-no-repeat pointer-events-none"
-          style={{
-            backgroundImage: "url('/images/hero-background-1.png')",
-            backgroundSize: 'cover',
-            mixBlendMode: "multiply",
-            opacity: 0.3
-          }}
-        /> */}
+      <section className="relative w-full overflow-hidden">
+        {/* Unicorn Studio Background */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
+          <div 
+            data-us-project="WLdBnYQijgtciMrogZw4" 
+            className="w-full h-full min-h-[900px]"
+            style={{ 
+              opacity: 0.8,
+              mixBlendMode: "normal"
+            }}
+          />
+        </div>
         <div className="relative z-10 container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-48 lg:pt-40 lg:pb-64 text-center">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 max-w-4xl mx-auto">
           Build business tools in<br /><span className="italic">minutes</span>,
@@ -187,16 +189,16 @@ export default function Page() {
 
             {/* Left Icons Column */}
             <div className="absolute left-0 md:left-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
-              <div ref={icon1Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+              <div ref={icon1Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-md flex items-center justify-center p-3">
                 <Image src="/logos/slack.png" alt="Slack" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
-              <div ref={icon2Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+              <div ref={icon2Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-md flex items-center justify-center p-3">
                 <Image src="/logos/airtable.png" alt="Airtable" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
             </div>
             
             {/* Left Outer Icon - extends further outward, positioned in middle */}
-            <div ref={icon5Ref} className="absolute -left-16 md:-left-8 top-1/2 -translate-y-1/2 z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+            <div ref={icon5Ref} className="absolute -left-16 md:-left-8 top-1/2 -translate-y-1/2 z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-md flex items-center justify-center p-3">
               <Image src="/logos/google-sheets.png" alt="Google Sheets" width={32} height={32} className="w-8 h-8 object-contain" />
             </div>
 
@@ -226,16 +228,16 @@ export default function Page() {
 
             {/* Right Icons Column */}
             <div className="absolute right-0 md:right-12 top-1/2 -translate-y-1/2 flex flex-col items-center gap-32">
-              <div ref={icon3Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+              <div ref={icon3Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-md flex items-center justify-center p-3">
                 <Image src="/logos/notion.png" alt="Notion" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
-              <div ref={icon4Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+              <div ref={icon4Ref} className="z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-md flex items-center justify-center p-3">
                 <Image src="/logos/salesforce.png" alt="Salesforce" width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
             </div>
             
             {/* Right Outer Icon - extends further outward, positioned in middle */}
-            <div ref={icon6Ref} className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-sm flex items-center justify-center p-3">
+            <div ref={icon6Ref} className="absolute -right-16 md:-right-8 top-1/2 -translate-y-1/2 z-10 size-14 md:size-16 rounded-full border border-border bg-background shadow-md flex items-center justify-center p-3">
               <Image src="/logos/stripe.png" alt="Stripe" width={32} height={32} className="w-8 h-8 object-contain" />
             </div>
           </div>
