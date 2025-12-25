@@ -86,13 +86,23 @@ export default function Page() {
       </nav>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-20 text-center">
+      <section className="relative w-full">
+        <div 
+          className="absolute inset-0 w-full h-full bg-center bg-no-repeat pointer-events-none"
+          style={{
+            backgroundImage: "url('/images/hero-background-1.png')",
+            backgroundSize: 'cover',
+            mixBlendMode: "multiply",
+            opacity: 0.3
+          }}
+        />
+        <div className="relative z-10 container mx-auto px-4 py-24 md:py-32 lg:py-40 text-center">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 max-w-4xl mx-auto">
           Build business tools in<br /><span className="italic">minutes</span>,
           not months.
         </h1>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-          <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20">
+          <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20 bg-background">
             <InputGroupInput
               placeholder="Describe your app..."
               className="px-6 text-base"
@@ -110,7 +120,7 @@ export default function Page() {
           <Button
             variant="outline"
             size="lg"
-            className="h-12 px-6 rounded-full"
+            className="h-12 px-6 rounded-full bg-[#F8F7F7] "
             data-icon="inline-end"
           >
             Browse apps
@@ -134,6 +144,7 @@ export default function Page() {
             No engineers required
           </p>
         </div> */}
+        </div>
       </section>
 
       {/* Trusted By Section */}
