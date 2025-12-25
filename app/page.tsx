@@ -209,7 +209,7 @@ export default function Page() {
               {/* Left edge target - pushed in by half height (24px/6) */}
               <div ref={leftEdgeRef} className="absolute left-6 top-1/2 -translate-y-1/2 w-1 h-1" />
               
-              <InputGroup ref={heroCtaRef} className="max-w-md w-full h-12 rounded-full border-muted-foreground/20 bg-background shadow-lg">
+              <InputGroup ref={heroCtaRef} className="w-[400px] h-12 rounded-full border-muted-foreground/20 bg-background shadow-lg">
                 <InputGroupInput
                   placeholder="Describe your app..."
                   className="px-6 text-base"
