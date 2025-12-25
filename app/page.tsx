@@ -1,24 +1,76 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowRight02Icon } from "@hugeicons/core-free-icons";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function Page() {
+  const [showNavCTA, setShowNavCTA] = useState(false);
+  const heroCtaRef = useRef<HTMLButtonElement>(null);
+  const integrationsRef = useRef<HTMLElement>(null);
+  const pricingRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // Show nav CTA when hero CTA is NOT visible
+        setShowNavCTA(!entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+        rootMargin: "0px",
+      }
+    );
+
+    const currentRef = heroCtaRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Navigation */}
-      <nav className="border-b">
+      <nav className="sticky top-0 z-50 w-full bg-background/60 backdrop-blur-xl supports-backdrop-filter:bg-background/60">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary rounded" />
               <span className="font-bold text-xl">Basebase</span>
             </div>
-            <div className="flex items-center gap-6">
-              <a href="#integrations" className="text-sm hover:underline">Integrations</a>
-              <a href="#pricing" className="text-sm hover:underline">Pricing</a>
-              <a href="#docs" className="text-sm hover:underline">Documentation</a>
-              <Button>Get Started</Button>
+            <div className="flex items-center gap-2">
+              <nav className="hidden md:flex items-center gap-2">
+                <Button variant="ghost" className="hover:bg-black/5 hover:text-foreground dark:hover:bg-white/5" onClick={() => integrationsRef.current?.scrollIntoView({ behavior: "smooth" })}>Integrations</Button>
+                <Button variant="ghost" className="hover:bg-black/5 hover:text-foreground dark:hover:bg-white/5" onClick={() => pricingRef.current?.scrollIntoView({ behavior: "smooth" })}>Pricing</Button>
+                <Button variant="ghost" className="hover:bg-black/5 hover:text-foreground dark:hover:bg-white/5">Documentation</Button>
+              </nav>
+              <AnimatePresence>
+                {showNavCTA && (
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "auto" }}
+                    exit={{ width: 0 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    <Button className="whitespace-nowrap">
+                      Get Started
+                      <HugeiconsIcon icon={ArrowRight02Icon} className="size-4" strokeWidth={2} />
+                    </Button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
@@ -27,14 +79,16 @@ export default function Page() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-20 text-center">
         <Badge variant="secondary" className="mb-4">Built for business operations</Badge>
-        <h1 className="text-5xl font-bold mb-6 max-w-4xl mx-auto">
-          Build business tools in minutes, not months
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 max-w-4xl mx-auto">
+          Build business tools in <span className="italic">minutes</span>,
+          <br />
+          not months.
         </h1>
         <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
           Connect your data. Build custom apps in minutes. Share instantly with your team. No engineers required.
         </p>
         <div className="flex gap-4 justify-center mb-4">
-          <Button size="lg">Browse Apps</Button>
+          <Button ref={heroCtaRef} size="lg">Browse Apps</Button>
           <Button size="lg" variant="outline">Create App</Button>
         </div>
         <p className="text-sm text-muted-foreground">
@@ -160,7 +214,7 @@ export default function Page() {
       </section>
 
       {/* Integrations Section */}
-      <section className="bg-muted/50 py-20">
+      <section ref={integrationsRef} className="bg-muted/50 py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Connect everything</h2>
@@ -218,7 +272,7 @@ export default function Page() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="border-y bg-muted/50 py-20">
+      <section ref={pricingRef} className="border-y bg-muted/50 py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-4">Ready to build?</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
