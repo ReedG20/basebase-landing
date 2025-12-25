@@ -107,7 +107,7 @@ export default function Page() {
         <AnimatedGridPattern
           numSquares={0}
           className={cn(
-            "mask-[radial-gradient(500px_circle_at_center,white,transparent)]",
+            "mask-[radial-gradient(400px_circle_at_center,white,transparent)]",
             "inset-x-0 inset-y-[-50%] h-[200%] skew-y-12",
           )}
         />
