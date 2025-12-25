@@ -101,7 +101,7 @@ export default function Page() {
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
         {/* Unicorn Studio Background */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
+        {/* <div className="absolute inset-0 w-full h-full pointer-events-none flex items-center justify-center">
           <div 
             data-us-project="WLdBnYQijgtciMrogZw4" 
             className="w-full h-full min-h-[900px]"
@@ -110,7 +110,7 @@ export default function Page() {
               mixBlendMode: "normal"
             }}
           />
-        </div>
+        </div> */}
         <div className="relative z-10 container mx-auto px-4 pt-20 pb-32 md:pt-32 md:pb-48 lg:pt-40 lg:pb-64 text-center">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-12 max-w-4xl mx-auto">
           Build business tools in<br /><span className="italic">minutes</span>,
